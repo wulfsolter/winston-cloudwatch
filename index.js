@@ -30,6 +30,7 @@ var WinstonCloudWatch = function(options) {
   this.uploadRate = options.uploadRate || 2000;
   this.logEvents = [];
   this.errorHandler = options.errorHandler;
+  this.filterMessage = options.filterMessage;
 
   if (options.cloudWatchLogs) {
     this.cloudwatchlogs = options.cloudWatchLogs;
