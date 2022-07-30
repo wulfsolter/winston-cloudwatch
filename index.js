@@ -83,6 +83,10 @@ WinstonCloudWatch.prototype.add = function(log) {
 
   var self = this;
 
+  if (self.filterMessage) {
+    log = self.filterMessage(log);
+  }
+
   if (!isEmpty(log.message) || isError(log.message)) {
     self.logEvents.push({
       message: self.formatMessage(log),
